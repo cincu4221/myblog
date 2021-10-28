@@ -1,7 +1,8 @@
+---
 Hexo로 깃허브 블로그 만들기
 ---
 
-##Hexo란?
+## Hexo란?
     Hexo는 Node.js기반의 정적 블로그 프레임워크 입니다.   
 **Markdown**으로 문서를 작성하고 빌드시 정적 HTML이 생기고   
 이것을 GitHub pages에 배포 하여 블로그를 관리 합니다.
@@ -12,7 +13,7 @@ Hexo로 깃허브 블로그 만들기
 * 파이참(PyCharm)
 * GitHub 계정
 <!--설치법은 따로 포스팅하고 링크할것-->
-### 설치환경 확인
+## 설치환경 확인
 1. 아래 코드로 Node.js 설치를 확인해봅니다.
 ```
 $ node -v
@@ -32,7 +33,7 @@ $ hexo init myblog
 ```
 생성된 디렉토리를 우클릭 한 뒤   
 '**Open Folder as PyCharm Community Edition Project**'를 클릭해 파이참으로 열어줍니다.
-![myblog_pycharm.png](C:\Users\우정\Desktop\github\myblog\img\myblog_pycharm.png)
+![myblog_pycharm.png](.\img\myblog_pycharm.png)
 
 실행된 파이참의 좌측 아래에서 터미널 메뉴를 선택하고 사진과같이 Git Bash를 클릭해주면   
 파이참에서 Git을 사용할 수 있게 됩니다.
@@ -98,4 +99,4 @@ $ hexo server
 ```
 $ hexo deploy
 ```
-배포가 완료되면 브라우저에서 [USERNAME.github.io]로 접속해 정상적으로 배포되었는지 확인한다.
+배포가 완료되면 브라우저에서 [USERNAME.github.io]로 접속해 정상적으로 배포되었는지 확인합니다.
