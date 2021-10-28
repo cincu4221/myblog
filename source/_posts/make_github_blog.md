@@ -64,21 +64,21 @@ git push -u origin main
 GitHub에서 '**myblog**' 리포지토리를 만들때와 이름만 다르게 '**사용자계정명.github.it**' 으로 바꾸어서 리포지토리를 하나 더 생성해 줍니다.
 
 파이참의 작업영역에서 _config.yml 파일을 열어서 수정해줍니다.
-###블로그 정보 설정
+### 블로그 정보 설정
 ```yaml
 title: blog title
 subtitle: 부제목을 지어주세요
 description: description을 지어주세요
 author: YourName
 ```
-###블로그의 URL정보 설정
+### 블로그의 URL정보 설정
 ```yaml
 url: https://Username.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 ```
-###깃허브 연동 설정
+### 깃허브 연동 설정
 ```yaml
 # Deployment
 deploy:
