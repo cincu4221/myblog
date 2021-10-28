@@ -12,7 +12,7 @@ Hexo로 깃허브 블로그 만들기
 * Node.js
 * 파이참(PyCharm)
 * GitHub 계정
-<!--설치법은 따로 포스팅하고 링크할것-->
+<!--설치법은 따로 포스팅하고 링크할것--><br>
 ## 설치환경 확인
 1. 아래 코드로 Node.js 설치를 확인해봅니다.
 ```
@@ -33,11 +33,11 @@ $ hexo init myblog
 ```
 생성된 디렉토리를 우클릭 한 뒤   
 '**Open Folder as PyCharm Community Edition Project**'를 클릭해 파이참으로 열어줍니다.
-![myblog_pycharm.png](.\img\myblog_pycharm.png)
+![myblog_pycharm.png](source/img/myblog_pycharm.png)
 
 실행된 파이참의 좌측 아래에서 터미널 메뉴를 선택하고 사진과같이 Git Bash를 클릭해주면   
 파이참에서 Git을 사용할 수 있게 됩니다.
-![pycharm_terminal.png](C:\Users\우정\Desktop\github\myblog\img\pycharm_terminal.png)   
+![pycharm_terminal.png](source/img/pycharm_terminal.png)   
 
 이후 Git에서 다음 명령어들을 입력해줍니다
 ```
@@ -47,7 +47,7 @@ $ npm install hexo-deployer-git --save
 ```
 
 이제 GitHub 접속하고 우측 상단의 아이콘 클릭 후 '**Your repositories**'에 들어갑니다.
-![github_create_new_repositories.png](C:\Users\우정\Desktop\github\myblog\img\github_create_new_repositories.png)
+![github_create_new_repositories.png](/source/img/github_create_new_repositories.png)
 Repository name 란에 만들었던 디렉토리와 같은 이름인 'myblog'를 넣은 후 아무것도 건드리지 않고 아래의 'Create repository' 버튼을 눌러줍니다.   
 
 다시 파이참으로 돌아와서 아래의 Git 명령어들을 입력해줍니다.
