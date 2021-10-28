@@ -11,8 +11,8 @@ Hexo로 깃허브 블로그 만들기
 * Git
 * Node.js
 * 파이참(PyCharm)
-* GitHub 계정
-<!--설치법은 따로 포스팅하고 링크할것--><br>
+* GitHub 계정<!--설치법은 따로 포스팅하고 링크할것-->   
+
 ## 설치환경 확인
 1. 아래 코드로 Node.js 설치를 확인해봅니다.
 ```
@@ -100,3 +100,6 @@ $ hexo server
 $ hexo deploy
 ```
 배포가 완료되면 브라우저에서 [USERNAME.github.io]로 접속해 정상적으로 배포되었는지 확인합니다.
+<br>
+<br>
+#### * 참고 : [https://dschloe.github.io/settings/hexo_blog/](https://dschloe.github.io/settings/hexo_blog/)
