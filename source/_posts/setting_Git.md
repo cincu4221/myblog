@@ -4,7 +4,8 @@
 다운로드
 ---
 ---
-![](/images/git_install/git_install_1.png)   
+<img src="/images/git_install/git_install_1.png" width="250">   
+
 먼저 `Git`홈페이지에서 `Download for Windows`을 클릭해 자신의 윈도우 버전에 맞는 Git을 다운로드 해준다.   
     [Git 홈페이지](https://git-scm.com/)   
 
@@ -16,7 +17,7 @@
 설치파일을 실행시키면  
 
 ![](/images/git_install/git_install_2.png)   
-* 항상 보는 ~~안읽는~~약관페이지가 나온다. `Next`를 눌러 넘어간다.   
+* 항상 보는 약관페이지가 나온다. `Next`를 눌러 넘어간다.   
 
 ![](/images/git_install/git_install_3.png)   
 * 설치경로를 정해주고 `Next`
