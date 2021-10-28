@@ -33,11 +33,11 @@ $ hexo init myblog
 ```
 생성된 디렉토리를 우클릭 한 뒤   
 '**Open Folder as PyCharm Community Edition Project**'를 클릭해 파이참으로 열어줍니다.
-![myblog_pycharm.png](source/img/myblog_pycharm.png)
+![](/images/myblog_pycharm.png)
 
 실행된 파이참의 좌측 아래에서 터미널 메뉴를 선택하고 사진과같이 Git Bash를 클릭해주면   
 파이참에서 Git을 사용할 수 있게 됩니다.
-![pycharm_terminal.png](source/img/pycharm_terminal.png)   
+![](/images/pycharm_terminal.png)   
 
 이후 Git에서 다음 명령어들을 입력해줍니다
 ```
@@ -47,7 +47,7 @@ $ npm install hexo-deployer-git --save
 ```
 
 이제 GitHub 접속하고 우측 상단의 아이콘 클릭 후 '**Your repositories**'에 들어갑니다.
-![github_create_new_repositories.png](/source/img/github_create_new_repositories.png)
+![](/images/github_create_new_repositories.png)
 Repository name 란에 만들었던 디렉토리와 같은 이름인 'myblog'를 넣은 후 아무것도 건드리지 않고 아래의 'Create repository' 버튼을 눌러줍니다.   
 
 다시 파이참으로 돌아와서 아래의 Git 명령어들을 입력해줍니다.
@@ -61,7 +61,7 @@ git remote add origin https://github.com/cincu4221/myblog.git
 git push -u origin main
 ```
 
-GitHub에서 'myblog' 리포지토리를 만들때와 이름만 다르게 '사용자계정명.github.it' 으로 바꾸어서 리포지토리를 하나 더 생성해 줍니다.
+GitHub에서 '**myblog**' 리포지토리를 만들때와 이름만 다르게 '**사용자계정명.github.it**' 으로 바꾸어서 리포지토리를 하나 더 생성해 줍니다.
 
 파이참의 작업영역에서 _config.yml 파일을 열어서 수정해줍니다.
 ###블로그 정보 설정
