@@ -41,7 +41,9 @@ Output:
 </div>
 </details>
 
+
 ##변수의 종류
+
 
 ---
 <details> 
@@ -85,7 +87,9 @@ print(type(none_x))
 </div>
 </details>
 
+
 ##사칙연산
+
 
 ---
 <details> 
@@ -117,7 +121,7 @@ Output:
 위처럼 각각 계산이 된걸 알 수 있다.
 
 ###정리하면 아래와 같다
-연산자|내용|
+|연산자|내용|
 |:------:|:---:|
 |+|두 변수의 합을 계산|
 |-|두 변수의 차를 계산|
@@ -131,7 +135,9 @@ Output:
 </details>
 
 
+
 ##논리형 연산자
+
 
 ---
 <details> 
@@ -142,6 +148,7 @@ Output:
 `and`연산자는 두 조건이 모두 참일때 `True`가 되며 `or`의 경우 두 조건중 하나라도 참일때 `True`가 된다.
 
 ### and연산자
+
 ```python
 print(True and True)
 print(True and False)
@@ -191,7 +198,9 @@ Output:
 </div>
 </details>
 
+
 ##비교 연산자
+
 
 ---
 <details> 
