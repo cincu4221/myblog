@@ -1,6 +1,14 @@
 ---
-Hexo로 깃허브 블로그 만들기
+title: Hexo로 깃허브 블로그 만들기
+date: 2021-10-28 21:32:46
+categories: 
+- blog
+tags: 
+- Github
+- Hexo
+- Markdown
 ---
+
 
 ## Hexo란?
     Hexo는 Node.js기반의 정적 블로그 프레임워크 입니다.   
