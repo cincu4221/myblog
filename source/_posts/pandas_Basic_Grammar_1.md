@@ -253,7 +253,8 @@ flights.head() # 데이터프레임의 가장 첫부분부터 표시
 </table>
 </div>
 
-</details>
+</details>  
+
 
 
 이 때 `.head()`의 괄호 안에 숫자가 있다면 그 수의 개수만큼 데이터가 출력된다.
@@ -333,7 +334,8 @@ flights.tail() #데이터프레임의 가장 뒷부분부터 표시
 </table>
 </div>
 
-</details>
+</details>  
+
 
 
 `.tail()`역시 마찬가지로 괄호안에 숫자가 있다면 수의 개수만큼 데이터가 출력된다.
@@ -410,6 +412,8 @@ print(frame.loc['사람1'])
 
 # print(frame.loc[0]) - 조건이 정수이므로 조회 불가
 ```
+<details> 
+<summary>출력</summary>
 
     * 특정 행 조회
     age        20
@@ -418,6 +422,7 @@ print(frame.loc['사람1'])
     Name: 사람1, dtype: int64
     loc를 Seq로 조회할 경우
     
+</details>
 
 
 ```python
@@ -510,7 +515,8 @@ frame_add_col
 </div>
 
 
-</details>
+</details>  
+
 
 컬럼이 추가되었고 어떠한 값도 넣어주지 않았으므로 NaN 값이 출력되고있다.  
 이제 데이터를 입력해준다.
@@ -662,13 +668,10 @@ axis 값은 행이면'0', 열이면 '1'로 지정해주면 된다.
 print('remove age column')
 frame_add_col.drop("height", axis=1)
 ```
-
-    remove age column
-    
-
-
 <details> 
 <summary>출력</summary>
+
+    remove age column
 
 <div>
 <style scoped>
@@ -716,7 +719,8 @@ frame_add_col.drop("height", axis=1)
 </table>
 </div>
 
-</details>
+</details>  
+
 
 
 그러나 이 경우 기존에 있던 `frame_add_col`에서 삭제되는게 아니라 삭제된 상태의 프레임을 리턴해준 것이다.  
@@ -784,5 +788,9 @@ frame_add_index
 
 </details>
 
+  
+  
+  
+  
 
 참조 : https://hong-sam.tistory.com/100
