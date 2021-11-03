@@ -16,7 +16,7 @@ tags:
 
 ```python
 import yfinance as yf
-data - yf.download('AAPL', '2020-08-01', '2020-08-08')
+data = yf.download('AAPL', '2020-08-01', '2020-08-08')
 data.info()
 ```
 
