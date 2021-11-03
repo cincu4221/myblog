@@ -169,6 +169,8 @@ print(ts.head())
 
 </details>
 
+<br><br>
+
 #### 방법 1. Pyplot API
 
 ---
@@ -199,6 +201,7 @@ plt.show()
 구글링 했을때 `객체.`이 아닌 `plt.`으로 시작하는 애들이 있다면 그 코드는 스킵하는게 좋다.
 </details>
 
+<br><br>
 
 #### 방법 2. 객체지향 API
 
@@ -223,7 +226,9 @@ plt.show()
 ```
 이 방법에 대해서는 따로 언급이 없었기 때문에 바로 방법 3으로 넘어간다.
 
-### 방법 3. Pyplot API + 객체지향 API
+<br><br>
+
+#### 방법 3. Pyplot API + 객체지향 API
 
 ---
 ```python
@@ -311,10 +316,26 @@ plt.show()
     graph: Rectangle(xy=(10.6, 0), width=0.8, height=550, angle=0)
     graph: Rectangle(xy=(11.6, 0), width=0.8, height=450, angle=0)
 
-![막대 그래프로 시각화](/images/python_visualiztion_basic_/output_17_1.png)  
-수정바람) 아직 코드가 정확히 뭘 뜻하는지 모르겠다. 공부하고 추후 수정할 것임 영상 1:28:10즈음
+![막대 그래프로 시각화](/images/python_visualiztion_basic_/output_17_1.png)
 
-`.xticks()`는 x축의 눈금을 나타내는 메소드인데 기본적으로는 `list`자료형을 사용한다.
+<details> 
+<summary>메소드 설명</summary>
+
+`.xticks()`는 x축의 눈금을 나타내는 메소드인데 기본적으로는 `list`자료형 한개을 사용한다.  
+하지만 메소드에 인자가 'list' 두 개로 받아졌을 경우,  
+첫번째 list는 x축 눈금의 갯수가 된다.  
+두번째 list는 x축 눈금의 이름이 된다.  
+이 코드에서는 `rotation` 옵션도 들어가 있는데 이것은 그냥 이름을 몇도정도 기울일지 나타낸다.
+<br><br>
+`plot = ax.bar()`는 그래프를 막대로 만든다.  
+첫번째 리스트 인자의 수 만큼 막대가 생성되고,  
+두번째 리스트 인자의 값 만큼 막대가 길어진다.  
+이렇다보니 첫번째 리스트와 두번째 리스트의 인자의 수가 일치해야 에러가 나지 않는다.
+<br><br>
+for문 내부의 `ax.text()`는 `Seaborn`-`막대그래프`-`표현할 값이 한 개인 막대 그래프` 챕터에 서술했으니 참고하길 바란다.
+
+</details>
+
 
 
 
@@ -354,6 +375,8 @@ fig.show()
 
 ![전체 값 대비 팁](/images/python_visualiztion_basic_/output_19_0.png)
 </details>
+
+<br>
 
 * 나타내는 값이 두 가지인 산점도 그래프
 
@@ -444,7 +467,7 @@ fig.show()
 <summary>Output</summary>
     
 ![png](/images/python_visualiztion_basic_/output_25_0.png)  
-수정바람) 정확이 어떻게 이 그래프가 출력되는지 모르기에 좀 더 공부후 작성할 것
+수정바람) 정확히 어떻게 이 그래프가 출력되는지 모르기에 좀 더 공부후 수정할 것
 </details>
 
 ### 히트맵
@@ -525,6 +548,8 @@ plt.show()
 
 ![산점도](/images/python_visualiztion_basic_/output_30_0.png)  
 </details>
+
+<br>
 
 * 회귀선이 있는 산점도
 
@@ -607,7 +632,7 @@ plt.show()
 
 
 ```python
-#import matplotlib.pyplot as plt  # 이 주석 역시 원래 실행 해줘야 하는 내용이지만 위 히스토그램 챕터에서 미리 입력했기 때문에 생략한다. 다음코드부터는 주석 모두를 생략한다.
+#import matplotlib.pyplot as plt  # 이 주석 역시 원래 실행 해줘야 하는 내용이지만 위 히스토그램 챕터에서 미리 입력했기 때문에 생략한다. 이하 기본주석이라 하고 생략한다.
 #import seaborn as sns
 
 #tips = sns.load_dataset("tips")
@@ -622,6 +647,8 @@ plt.show()
 ![png](/images/python_visualiztion_basic_/output_39_0.png)
     
 </details>
+
+<br>
 
 <details> 
 <summary>'tips'Data의 'day'값, 인덱스별 정렬, 'tips'의 내림차순 재배치</summary>
@@ -645,6 +672,7 @@ print("values: ", tips['day'].value_counts().values)
     
 </details>
 
+<br>
 
 <details> 
 <summary>'tips'Data의 'day'값에 대한 오름차순(ascending) 정렬</summary>
@@ -661,8 +689,9 @@ print(tips['day'].value_counts(ascending=True))
     
 </details>
 
+<br>
 
-*표현할 값이 한 개인 막대 그래프
+* 표현할 값이 한 개인 막대 그래프
 
 ```python
 # 기본주석 생략
@@ -731,6 +760,10 @@ sns.countplot() x축이 나타낼 자료, 나타낼 데이터셋, 그래프로 �
 
 ### 상관관계 그래프
 
+---
+
+<details> 
+<summary>데이터 불러오기 및 행, 열 갯수 표시하기</summary>
 
 ```python
 import pandas as pd 
@@ -741,14 +774,20 @@ import matplotlib.pyplot as plt
 mpg = sns.load_dataset("mpg")
 print(mpg.shape) # 398 행, 9개 열
 
-num_mpg = mpg.select_dtypes(include = np.number)
-print(num_mpg.shape) # 398 행, 7개 열
+num_mpg = mpg.select_dtypes(include = np.number) # num_mpg에 'mpg' 데이터셋의 데이터타입 총갯수를 입력한다(숫자형 데이터타입만 포함)
+print(num_mpg.shape) # 398 행, 7개 열 (두개가 사라진 이유는 number타입이 아닌 Object타입이기 때문)
 ```
+
 
     (398, 9)
     (398, 7)
-    
 
+</details>
+
+<br>
+
+<details> 
+<summary>데이터셋의 컬럼 표시</summary>
 
 ```python
 num_mpg.info()
@@ -769,14 +808,16 @@ num_mpg.info()
     dtypes: float64(4), int64(3)
     memory usage: 21.9 KB
     
+</details>
 
+<br>
+
+<details> 
+<summary>데이터셋 컬럼간의 상관관계 표시</summary>
 
 ```python
 num_mpg.corr()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -880,15 +921,18 @@ num_mpg.corr()
 </table>
 </div>
 
+</details>
 
+<br>
 
+* 상관관계 히트맵
 
 ```python
 fig, ax = plt.subplots(nrows = 1, ncols = 2, figsize=(16, 5))
 
 #  기본 그래프 [Basic Correlation Heatmap]
 sns.heatmap(num_mpg.corr(), ax=ax[0])
-ax[0].set_title('Basic Correlation Heatmap', pad = 12)
+ax[0].set_title('Basic Correlation Heatmap', pad = 12) 
 
 # 상관관계 수치 그래프 [Correlation Heatmap with Number]
 sns.heatmap(num_mpg.corr(), vmin=-1, vmax=1, annot=True, ax=ax[1])
@@ -897,24 +941,29 @@ ax[1].set_title('Correlation Heatmap with Number', pad = 12)
 plt.show()
 ```
 
-
+<details> 
+<summary>Output</summary>
     
-![png](/images/python_visualiztion_basic_/output_49_0.png)
-    
+![png](/images/python_visualiztion_basic_/output_49_0.png)  
 
+위의 코드에서 `pad`는 히트맵과 타이틀의 간격설정이며,  
+`set_title`의 인자를 설명하면 (히트맵을 만들 '데이터셋.corr()', 히트맵의 최소값, 최대값, 수치표현(bool값), 마지막인자는 확실하지는 않지만 앞의 히트맵 설정을 어떤 히트맵에 적용시킬지 묻는것 같다.)
 
+</details>
+
+<br>
+
+<details> 
+<summary>상관관계 배열 만들기</summary>
 
 ```python
+# import numpy as np
+# 윗단 코드에서 만들어진 num_mpg 사용
 print(int(True))
 np.triu(np.ones_like(num_mpg.corr()))
 ```
 
     1
-    
-
-
-
-
     array([[1., 1., 1., 1., 1., 1., 1.],
            [0., 1., 1., 1., 1., 1., 1.],
            [0., 0., 1., 1., 1., 1., 1.],
@@ -923,8 +972,11 @@ np.triu(np.ones_like(num_mpg.corr()))
            [0., 0., 0., 0., 0., 1., 1.],
            [0., 0., 0., 0., 0., 0., 1.]])
 
-
-
+`np.triu(배열, k=0)`는 위 결과처럼 우하향 대각선이 있고 위 아래로 삼각형이 있다 생각했을때 아래쪽의 삼각형이 모두 0이 되는 함수이다.  
+`k`의 숫자가 낮아질수록 삼각형은 한칸씩 작아진다.
+위 결과에서 행과 열이 7칸이 된 이유는 `np.ones_like(num_mpg.corr())`의 행이 7개 이기때문인듯 하다.
+~~확실히 모르겠음 질문 필수~~
+<br><br>
 
 ```python
 mask = np.triu(np.ones_like(num_mpg.corr(), dtype=np.bool))
@@ -938,10 +990,14 @@ print(mask)
      [False False False False  True  True  True]
      [False False False False False  True  True]
      [False False False False False False  True]]
-    
+
+k 값을 바꿔 True와 False로 값을 준 경우.
+</details>
+
 
 
 ```python
+# 기본주석 생략
 fig, ax = plt.subplots(figsize=(16, 5))
 
 #  기본 그래프 [Basic Correlation Heatmap]
@@ -953,18 +1009,32 @@ ax.set_title('Triangle Correlation Heatmap', pad = 16, size = 16)
 fig.show()
 ```
 
+<details> 
+<summary>Output</summary>
 
     
 ![png](/images/python_visualiztion_basic_/output_52_0.png)
-    
+
+위의 글들을 모두 읽었음에도 단 하나 모르는 요소가 있다면 바로 `cmap`일 것이다.
+`cmap`은 colormap을 줄인것으로 `cmap`의 종류는 상당히 많다.  
+[이곳](https://codetorial.net/matplotlib/set_colormap.html)에 가면 상당히 잘 정리되어 있으니 `cmap`옵션을 사용할 때마다 요긴하게 쓸 수 있을것이다.
+
+</details>
+
 
 
 ## Intermediate
 
 ### 페가블로그 코드
+
+---
+
 - https://jehyunlee.github.io/2020/08/27/Python-DS-28-mpl_spines_grids/
 
 
+* 이 챕터의 내용은 코드가 너무 긺으로 시각화 결과물을 접지않고 코드를 접는형식으로 서술하겠음.
+
+* 필수 코드이므로 생략을 생략
 ```python
 import matplotlib.pyplot as plt
 from matplotlib.ticker import (MultipleLocator, AutoMinorLocator, FuncFormatter)
@@ -972,6 +1042,8 @@ import seaborn as sns
 import numpy as np
 ```
 
+<details> 
+<summary>Code</summary>
 
 ```python
 def plot_example(ax, zorder=0):
@@ -1017,19 +1089,26 @@ print(tips_day)
     2   Sat   20.441379  2.993103  2.517241
     3   Sun   21.410000  3.255132  2.842105
     
+</details>
 
+---
+
+
+<details> 
+<summary>Code</summary>
 
 ```python
 fig, ax = plt.subplots(figsize=(10, 6))
 ax = plot_example(ax, zorder=2)
 ```
-
+</details>
 
     
 ![png](/images/python_visualiztion_basic_/output_58_0.png)
     
 
-
+<details> 
+<summary>Code</summary>
 
 ```python
 fig, ax = plt.subplots(figsize=(10, 6))
@@ -1040,12 +1119,13 @@ ax.spines["right"].set_visible(False)
 ax.spines["left"].set_visible(False)
 ```
 
-
+</details>
     
 ![png](/images/python_visualiztion_basic_/output_59_0.png)
     
 
-
+<details> 
+<summary>Code</summary>
 
 ```python
 fig, ax = plt.subplots()
@@ -1060,12 +1140,13 @@ ax.yaxis.set_major_formatter(formatter)
 ax.yaxis.set_minor_locator(MultipleLocator(0.5))
 ```
 
-
+</details>
     
 ![png](/images/python_visualiztion_basic_/output_60_0.png)
     
 
-
+<details> 
+<summary>Code</summary>
 
 ```python
 fig, ax = plt.subplots()
@@ -1083,7 +1164,7 @@ ax.grid(axis="y", which="major", color="lightgray")
 ax.grid(axis="y", which="minor", ls=":")
 ```
 
-
+</details>
     
 ![png](/images/python_visualiztion_basic_/output_61_0.png)
     
@@ -1091,6 +1172,10 @@ ax.grid(axis="y", which="minor", ls=":")
 
 ### 책 코드
 
+---
+
+<details> 
+<summary>Code</summary>
 
 ```python
 import matplotlib.pyplot as plt
@@ -1111,12 +1196,14 @@ ax0 = sns.barplot(x = "day", y = 'total_bill', data = tips,
                   ax=ax[0])
 ```
 
+</details>
 
     
 ![png](/images/python_visualiztion_basic_/output_63_0.png)
     
 
-
+<details> 
+<summary>Code</summary>
 
 ```python
 group_mean = tips.groupby(['day'])['total_bill'].agg('mean')
@@ -1126,10 +1213,13 @@ print("The Best Day:", h_day)
 print("The Highest Avg. Total Biil:", h_mean)
 ```
 
+</details>
+
     The Best Day: Sun
     The Highest Avg. Total Biil: 21.41
     
-
+<details> 
+<summary>Code</summary>
 
 ```python
 tips = sns.load_dataset("tips")
@@ -1157,12 +1247,14 @@ for p in ax0.patches:
 fig.show()
 ```
 
+</details>
 
     
 ![png](/images/python_visualiztion_basic_/output_65_0.png)
     
 
-
+<details> 
+<summary>Code</summary>
 
 ```python
 import matplotlib.pyplot as plt
@@ -1216,12 +1308,13 @@ ax0.grid(axis="y", which="minor", ls=":")
 fig.show()
 ```
 
-
+</details>
     
 ![png](/images/python_visualiztion_basic_/output_66_0.png)
     
 
-
+<details> 
+<summary>Code</summary>
 
 ```python
 import matplotlib.pyplot as plt
@@ -1291,6 +1384,8 @@ ax1.set_title("Just Bar Graph")
 
 plt.show()
 ```
+
+</details>
 
     Text(0, 0, 'Thur')
     Text(0, 0, 'Fri')
