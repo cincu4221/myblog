@@ -1,7 +1,16 @@
-## 파이썬 들어가기
-- 오전에 파일 및 수정 내용 공유 할 것! 
+---
+title: 파이썬 시각화 기본
+date: 2021-11-03 12:23:18
+tags:
+- Python
+- Data Visualization
+---
 
+## 파이썬 시각화의 기본 형태들
 
+---
+
+* 선 그래프로 시각화하기
 ```python
 import matplotlib.pyplot as plt
 
@@ -19,13 +28,14 @@ ax.legend()
 plt.show()
 ```
 
-
+<details> 
+<summary>Output</summary>
     
-![png](output_1_0.png)
+![선 그래프로 시각화](/images/python_visualiztion_basic_/output_1_0.png)
     
+</details>
 
-
-
+* 위의 그래프에서 크기의 변화를 준 그래프
 ```python
 import matplotlib.pyplot as plt
 
@@ -43,34 +53,42 @@ axes.legend()
 plt.show()
 ```
 
-
+<details> 
+<summary>Output</summary>
     
-![png](output_2_0.png)
+![크기의 변화를 준 그래프](/images/python_visualiztion_basic_/output_2_0.png)
     
+</details>
 
-
-
+* `fig`와 `axes` 출력
 ```python
 print(fig)
 print(axes)
 ```
 
+<details> 
+<summary>Output</summary>
+
     Figure(720x432)
     AxesSubplot(0.125,0.125;0.775x0.755)
+</details>
+
     
 
 ## Matplotlib
 
+---
+
 ### 선 그래프
 
-#### 방법 1. Pyplot API
-- 코드 변경됨..
-- 참조: https://pypi.org/project/fix-yahoo-finance/
 
 
-```python
+먼저 `yfinance`라이브러리를 사용하기 위해 설치를 한다.
+```shell
 !pip install yfinance --upgrade --no-cache-dir
 ```
+<details> 
+<summary>실행시</summary>
 
     Collecting yfinance
       Downloading yfinance-0.1.64.tar.gz (26 kB)
@@ -99,14 +117,20 @@ print(axes)
         Uninstalling lxml-4.2.6:
           Successfully uninstalled lxml-4.2.6
     Successfully installed lxml-4.6.4 yfinance-0.1.64
-    
+
+다음과 같이 출력되며 `yfinace`를 설치한다.
 
 
+</details>
+
+`yfinance`를 임포트해주고 그로부터 데이터를 받아와 출력을 할수 있다.
 ```python
 import yfinance as yf
 data = yf.download('AAPL', '2019-08-01', '2020-08-01')
 data.info()
 ```
+<details> 
+<summary>Output</summary>
 
     [*********************100%***********************]  1 of 1 completed
     <class 'pandas.core.frame.DataFrame'>
@@ -122,13 +146,16 @@ data.info()
      5   Volume     253 non-null    int64  
     dtypes: float64(5), int64(1)
     memory usage: 13.8 KB
-    
+다음과 같이 애플의 1년동안의 주가를 볼 수 있다.
+</details>
 
-
+데이터의 컬럼을 지목해서 열람하는것 역시 가능하다.
 ```python
 ts = data['Open']
 print(ts.head())
 ```
+<details> 
+<summary>Output</summary>
 
     Date
     2019-08-01    53.474998
@@ -137,8 +164,14 @@ print(ts.head())
     2019-08-06    49.077499
     2019-08-07    48.852501
     Name: Open, dtype: float64
-    
+`data`에 담겨있는 애플의 주가정보 중 'Open'에 해당하는 전일 종가를 가장 앞쪽(`.head()`)부터 출력한 것이다.
+애플주식이 이렇게 쌌었나 검색해보니 이게 맞다....
 
+</details>
+
+#### 방법 1. Pyplot API
+
+---
 
 ```python
 # import fix_yahoo_finance as yf
@@ -155,19 +188,21 @@ plt.xlabel('Date')
 plt.ylabel('Stock Market Open Price') 
 plt.show()
 ```
+<details> 
+<summary>Output</summary>
 
     [*********************100%***********************]  1 of 1 completed
-    
 
-
-    
-![png](output_10_1.png)
-    
+![애플의 최근 2년간 전일종가 그래프](/images/python_visualiztion_basic_/output_10_1.png)  
+이처럼 결과가 출력되지만 이 문법은 시각화를 처음배우는 초심자에게는 적합하지 않다고 한다.  
+후술할 문법과 위 문법 모두 출력은 되나 이 문법은 객체지향이 아니기도 하고 상대적으로 복잡하기때문에 초심자의 경우에 헷갈릴수 있어 사용하지 않는다.
+구글링 했을때 `객체.`이 아닌 `plt.`으로 시작하는 애들이 있다면 그 코드는 스킵하는게 좋다.
+</details>
 
 
 #### 방법 2. 객체지향 API
 
-
+---
 
 ```python
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
@@ -186,10 +221,11 @@ ax.set_title('Artist Layer Histogram')
 # fig.savefig('Matplotlib_histogram.png')
 plt.show()
 ```
+이 방법에 대해서는 따로 언급이 없었기 때문에 바로 방법 3으로 넘어간다.
 
 ### 방법 3. Pyplot API + 객체지향 API
 
-
+---
 ```python
 import yfinance as yf
 import matplotlib.pyplot as plt
@@ -206,45 +242,38 @@ ax.set_ylabel('Stock Market Open Price')
 plt.show()
 ```
 
-    [*********************100%***********************]  1 of 1 completed
-    
-
-
-    
-![png](output_14_1.png)
-    
-
-
-
-```python
-# import fix_yahoo_finance as yf
-import yfinance as yf
-import matplotlib.pyplot as plt
-
-data = yf.download('AAPL', '2019-08-01', '2020-08-01')
-ts = data['Open']
-
-fig, ax = plt.subplots(figsize=(10, 6)) # 직접 Figure 객체 생성
-# ax= fig.subplots() # 직접 axes를 생성
-ax.plot(ts) # 생성된 axes 에 대한 plot() 멤버 직접 호출 
-ax.set_title('Stock Market fluctuation of AAPL')
-ax.legend(labels=['Price'], loc='best')
-ax.set_xlabel('Date')
-ax.set_ylabel('Stock Market Open Price')
-plt.show()
-```
+<details> 
+<summary>Output</summary>
 
     [*********************100%***********************]  1 of 1 completed
-    
+![](/images/python_visualiztion_basic_/output_14_1.png)  
+드디어 꼭 외우라고 하셨던 pyplot + 객체지향 API 방법이다.  
+특히 7번째 행 부터 마지막까지가 중요한데 그에대한 설명은 아래에 표로 적겠다.  
+중요하다 몇번을 강조하셨으니 위 코드는 변형을 해가며 여러번 작성해보자.
 
+<details> 
+<summary>설명 표</summary>
 
-    
-![png](output_15_1.png)
+|코드|설명|
+|:---:|:---:|
+|fig, ax = plt.subplots()|데이터 전체적 외형을 설정하는 부분|
+|ax.plot(ts)|데이터를 표현해주는 행|
+|ax.set_title()|데이터 시각화의 제목|
+|ax.legend()|범례|
+|ax.set_xlabel()|x축 데이터의 제목|
+|ax.set_ylabel()|y축 데이터의 제목|
+|plt.show()|안해도 상관없으나 '완료후 게시' 라는 뜻으로 작성|
+앞으로 나올 표의 내용도 표의 위에 있는 코드들과 적절히 섞어서 이해하길 바란다.
+
+</details>
+
+</details>
     
 
 
 ### 막대 그래프
 
+---
 
 ```python
 import matplotlib.pyplot as plt
@@ -266,6 +295,9 @@ for rect in plot:
 plt.show()
 ```
 
+<details> 
+<summary>Output</summary>
+
     graph: Rectangle(xy=(0.6, 0), width=0.8, height=300, angle=0)
     graph: Rectangle(xy=(1.6, 0), width=0.8, height=400, angle=0)
     graph: Rectangle(xy=(2.6, 0), width=0.8, height=550, angle=0)
@@ -278,19 +310,27 @@ plt.show()
     graph: Rectangle(xy=(9.6, 0), width=0.8, height=700, angle=0)
     graph: Rectangle(xy=(10.6, 0), width=0.8, height=550, angle=0)
     graph: Rectangle(xy=(11.6, 0), width=0.8, height=450, angle=0)
-    
+
+![막대 그래프로 시각화](/images/python_visualiztion_basic_/output_17_1.png)  
+수정바람) 아직 코드가 정확히 뭘 뜻하는지 모르겠다. 공부하고 추후 수정할 것임 영상 1:28:10즈음
+
+`.xticks()`는 x축의 눈금을 나타내는 메소드인데 기본적으로는 `list`자료형을 사용한다.
 
 
-    
-![png](output_17_1.png)
-    
+
+</details>
+
 
 
 ### 산점도 그래프
+
+---
+
 - 두개의 연속형 변수 (키, 몸무게 등)
 - 상관관계 != 인과관계
+<br><br>  
 
-
+* 나타내는 값이 한가지인 산점도 그래프
 
 ```python
 import matplotlib.pyplot as plt
@@ -302,27 +342,23 @@ x = tips['total_bill']
 y = tips['tip']
 
 fig, ax = plt.subplots(figsize=(10, 6))
-ax.scatter(x, y)
+ax.scatter(x, y) # 각각의 값을 선으로 표현해주는 scatter()
 ax.set_xlabel('Total Bill')
 ax.set_ylabel('Tip')
 ax.set_title('Tip ~ Total Bill')
 
 fig.show()
 ```
+<details> 
+<summary>Output</summary>
 
+![전체 값 대비 팁](/images/python_visualiztion_basic_/output_19_0.png)
+</details>
 
-    
-![png](output_19_0.png)
-    
-
-
+* 나타내는 값이 두 가지인 산점도 그래프
 
 ```python
 label, data = tips.groupby('sex')
-```
-
-
-```python
 tips['sex_color'] = tips['sex'].map({"Female" : "#0000FF", "Male" : "#00FF00"})
 
 fig, ax = plt.subplots(figsize=(10, 6))
@@ -336,16 +372,18 @@ for label, data in tips.groupby('sex'):
 ax.legend()
 fig.show()
 ```
-
-
+<details> 
+<summary>Output</summary>
     
-![png](output_21_0.png)
-    
+![전체 값 대비 팁의 성별분포](/images/python_visualiztion_basic_/output_21_0.png)
 
+</details>
 
 ### 히스토그램
-- 수치형 변수 1개
 
+---
+
+- 수치형 변수 1개
 
 
 ```python
@@ -359,7 +397,7 @@ age = titanic['age']
 
 nbins = 21
 fig, ax = plt.subplots(figsize=(10, 6))
-ax.hist(age, bins = nbins)
+ax.hist(age, bins = nbins) # 여기서 bins = nbins는 히스토그램을 더 세밀하게 나누어 준다.
 ax.set_xlabel("Age")
 ax.set_ylabel("Frequency")
 ax.set_title("Distribution of Aae in Titanic")
@@ -367,13 +405,21 @@ ax.axvline(x = age.mean(), linewidth = 2, color = 'r')
 fig.show()
 ```
 
-
+<details> 
+<summary>Output</summary>
     
-![png](output_23_0.png)
-    
+![타이타닉호 탑승객의 나이 분포](/images/python_visualiztion_basic_/output_23_0.png)  
 
+|코드|설명|
+|:---:|:---:|
+|`.hist()`|데이터를 히스토그램으로 표현해주는 메소드|
+|`.axvline()`|데이터의 평균을 선으로 나타내주는 메소드|
+</details>
 
 ### 박스플롯
+
+---
+
 - x축 변수: 범주형 변수, 그룹과 관련있는 변수, 문자열
 - y축 변수: 수치형 변수 
 
@@ -394,15 +440,16 @@ ax.boxplot(data, labels=['setosa', 'versicolor', 'virginica'])
 fig.show()
 ```
 
-
+<details> 
+<summary>Output</summary>
     
-![png](output_25_0.png)
-    
-
+![png](/images/python_visualiztion_basic_/output_25_0.png)  
+수정바람) 정확이 어떻게 이 그래프가 출력되는지 모르기에 좀 더 공부후 작성할 것
+</details>
 
 ### 히트맵
 
-
+---
 
 ```python
 import matplotlib.pyplot as plt
@@ -421,6 +468,8 @@ fig.colorbar(im)
 
 fig.show()
 ```
+<details> 
+<summary>Output</summary>
 
          year month  passengers
     0    1949   Jan         112
@@ -437,16 +486,27 @@ fig.show()
     
     [144 rows x 3 columns]
     
+![연,월별 승객의 수](/images/python_visualiztion_basic_/output_27_1.png)  
 
+|제목|제목|
+|:---:|:---:|
+|||
+|fig.colorbar()|값의 빈도 수에 대한 컬러바생성|
 
-    
-![png](output_27_1.png)
-    
+</details>
+
 
 
 ## Seaborn
 
+---
+
 ### 산점도와 회귀선이 있는 산점도
+
+--- 
+
+
+* 산점도
 
 
 ```python
@@ -460,12 +520,13 @@ sns.scatterplot(x = "total_bill", y = "tip", data = tips)
 plt.show()
 ```
 
+<details> 
+<summary>Output</summary>
 
-    
-![png](output_30_0.png)
-    
+![산점도](/images/python_visualiztion_basic_/output_30_0.png)  
+</details>
 
-
+* 회귀선이 있는 산점도
 
 ```python
 fig, ax = plt.subplots(nrows = 1, ncols = 2, figsize=(15, 5))
@@ -484,15 +545,18 @@ sns.regplot(x = "total_bill",
 plt.show()
 ```
 
-
+<details> 
+<summary>Output</summary>
     
-![png](output_31_0.png)
-    
+![회귀선이 있는 산점도](/images/python_visualiztion_basic_/output_31_0.png)  
+위의 코드처럼 `fit_reg = True`로 해줄 경우 회귀선이 나타나는것을 알 수 있다.
+그리고 `ax = ax[num]`의 경우에는 그래프의 인덱스로 보인다.
 
+</details>
 
 ### 히스토그램/커널 밀도 그래프
 
-
+---
 
 ```python
 import matplotlib.pyplot as plt
@@ -500,72 +564,68 @@ import seaborn as sns
 
 tips = sns.load_dataset("tips")
 
-sns.displot(x = "tip", data = tips)
 plt.figure(figsize=(10, 6))
+sns.displot(x = "tip", data = tips)
+sns.displot(x="tip", kind="kde", data=tips) # 종류 = 커널밀도 그래프(kde)
+sns.displot(x="tip", kde=True, data=tips) # 히스토그램에 kde를 넣을건가 = True
 plt.show()
 ```
-
-
-    
-![png](output_33_0.png)
-    
-
-
+<details> 
+<summary>Output</summary>
 
     <Figure size 720x432 with 0 Axes>
+![히스토그램](/images/python_visualiztion_basic_/output_33_0.png)
+![커널 밀도 그래프](/images/python_visualiztion_basic_/output_34_0.png)    
+![커널 밀드 그래프가 그려진 히스토그램](/images/python_visualiztion_basic_/output_35_0.png)
 
-
-
-```python
-sns.displot(x="tip", kind="kde", data=tips)
-plt.show()
-```
-
-
-    
-![png](output_34_0.png)
-    
-
-
-
-```python
-sns.displot(x="tip", kde=True, data=tips)
-plt.show()
-```
-
-
-    
-![png](output_35_0.png)
-    
+</details>
 
 
 ### 박스플롯
 
 
 ```python
+#import matplotlib.pyplot as plt  # 주석처리된 부분은 원래 실행 해줘야 하는 내용이지만 위 히스토그램 챕터에서 미리 입력했기 때문에 생략한다. 
+#import seaborn as sns
+
+#tips = sns.load_dataset("tips")
+
 sns.boxplot(x = "day", y = "total_bill", data = tips)
 sns.swarmplot(x = "day", y = "total_bill", data = tips, alpha = .25)
 plt.show()
 ```
 
-
+<details> 
+<summary>Output</summary>
     
-![png](output_37_0.png)
+![박스플롯](/images/python_visualiztion_basic_/output_37_0.png)
     
+</details>
 
 
 ### 막대 그래프
 
 
 ```python
+#import matplotlib.pyplot as plt  # 이 주석 역시 원래 실행 해줘야 하는 내용이지만 위 히스토그램 챕터에서 미리 입력했기 때문에 생략한다. 다음코드부터는 주석 모두를 생략한다.
+#import seaborn as sns
+
+#tips = sns.load_dataset("tips")
+
 sns.countplot(x = "day", data = tips)
 plt.show()
 ```
 
+<details> 
+<summary>Output</summary>
+    
+![png](/images/python_visualiztion_basic_/output_39_0.png)
+    
+</details>
 
-    
-![png](output_39_0.png)
-    
+<details> 
+<summary>'tips'Data의 'day'값, 인덱스별 정렬, 'tips'의 내림차순 재배치</summary>
+
 
 
 
@@ -583,7 +643,11 @@ print("values: ", tips['day'].value_counts().values)
     index:  CategoricalIndex(['Sat', 'Sun', 'Thur', 'Fri'], categories=['Thur', 'Fri', 'Sat', 'Sun'], ordered=False, dtype='category')
     values:  [87 76 62 19]
     
+</details>
 
+
+<details> 
+<summary>'tips'Data의 'day'값에 대한 오름차순(ascending) 정렬</summary>
 
 ```python
 print(tips['day'].value_counts(ascending=True))
@@ -595,30 +659,48 @@ print(tips['day'].value_counts(ascending=True))
     Sat     87
     Name: day, dtype: int64
     
+</details>
 
+
+*표현할 값이 한 개인 막대 그래프
 
 ```python
+# 기본주석 생략
+ax = sns.countplot(x = "day", data = tips, order = tips['day'].value_counts().index) # x축을 'day'로 지정, data는 'tips'로 채워넣음, 'day'의 값이 높은 순서대로 막대그래프 정렬 
+for p in ax.patches: # ax.patches = p
+  height = p.get_height() # 아래행을 실행하기위해 막대그래프의 높이 가져옴
+  ax.text(p.get_x() + p.get_width()/2., height+3, height, ha = 'center', size=9) # 막대그래프 위 수치 작성
+ax.set_ylim(-5, 100) # y축 최소, 최대범위
 plt.show()
 ```
 
+<details> 
+<summary>Output</summary>
+    
+![나타낼 값이 한 개인 막대그래프](/images/python_visualiztion_basic_/output_43_0.png)  
+나중에 다시 본다면 조금 설명이 필요할 것 같다.  
+특히 `ax.text`행의 인자가 조금 많은데 설명이 필요한 듯하다.  
+직접 colab에서 이것저것 만져본 결과 추측하기로는 다음 표과 같은듯 하다.
+
+
+|코드|설명|
+|:---:|:---:|
+|p.get_x() + p.get_width()/2.|수치가 들어갈 x축 위지|
+|height+3|y축 위치(현재 +3)|
+|height|수치의 값을 조절할 것인지(현재 +0)|
+|ha = 'center'|수치를 (x,y)축의 가운데로 정렬|
+|size=9|폰트의 크기이다|
+
+여기서 혹시나 `ha = 'center'`부분이 잘 이해가 안될수 있다.~~내가그랬다~~  
+`ha =`는 (x,y)축의 기준이 될 곳을 정하는 인자인듯 하다.  
+`center`말고도 `left`,`right`등을 사용할수 있는데 막대의 기준에서 왼쪽,오른쪽이 아닌 텍스트의 기준에서 왼쪽,오른쪽이라 방향을 선택하면 오히려 반대로 배치되는것을 알 수 있다.
+
+</details>
+
+* 표현할 값이 두 개인 막대 그래프
 
 ```python
-ax = sns.countplot(x = "day", data = tips, order = tips['day'].value_counts().index)
-for p in ax.patches:
-  height = p.get_height()
-  ax.text(p.get_x() + p.get_width()/2., height+3, height, ha = 'center', size=9)
-ax.set_ylim(-5, 100)
-plt.show()
-```
-
-
-    
-![png](output_43_0.png)
-    
-
-
-
-```python
+# 기본주석 생략
 ax = sns.countplot(x = "day", data = tips, hue = "sex", dodge = True,
               order = tips['day'].value_counts().index)
 for p in ax.patches:
@@ -629,11 +711,23 @@ ax.set_ylim(-5, 100)
 plt.show()
 ```
 
-
+<details> 
+<summary>Output</summary>
     
-![png](output_44_0.png)
-    
+![나타낼 값이 두 개인 막대그래프](/images/python_visualiztion_basic_/output_44_0.png)  
 
+이 코드에서 첫째줄의 인자를 표로 나타내면  
+
+|코드|설명|
+|:---:|:---:|
+|x = "day"| x축이 나타낼 자료 |
+|data = tips| 표현할 데이터셋 |
+|hue = "sex"| 그래프로 표현할 항목 |
+|dodge = True| 항목끼리 나눠서 표현할 것인지 |
+|order = tips['day'].value_counts().index| 'day'의 값이 높은 순서대로 그래프 정렬 |
+
+sns.countplot() x축이 나타낼 자료, 나타낼 데이터셋, 그래프로 나타낼 항목, 항목끼리 나눠서 표현할것인지, 'day'의 값이 높은 순서대로 막대그래프 정렬 
+</details>
 
 ### 상관관계 그래프
 
@@ -805,7 +899,7 @@ plt.show()
 
 
     
-![png](output_49_0.png)
+![png](/images/python_visualiztion_basic_/output_49_0.png)
     
 
 
@@ -861,7 +955,7 @@ fig.show()
 
 
     
-![png](output_52_0.png)
+![png](/images/python_visualiztion_basic_/output_52_0.png)
     
 
 
@@ -932,7 +1026,7 @@ ax = plot_example(ax, zorder=2)
 
 
     
-![png](output_58_0.png)
+![png](/images/python_visualiztion_basic_/output_58_0.png)
     
 
 
@@ -948,7 +1042,7 @@ ax.spines["left"].set_visible(False)
 
 
     
-![png](output_59_0.png)
+![png](/images/python_visualiztion_basic_/output_59_0.png)
     
 
 
@@ -968,7 +1062,7 @@ ax.yaxis.set_minor_locator(MultipleLocator(0.5))
 
 
     
-![png](output_60_0.png)
+![png](/images/python_visualiztion_basic_/output_60_0.png)
     
 
 
@@ -991,7 +1085,7 @@ ax.grid(axis="y", which="minor", ls=":")
 
 
     
-![png](output_61_0.png)
+![png](/images/python_visualiztion_basic_/output_61_0.png)
     
 
 
@@ -1019,7 +1113,7 @@ ax0 = sns.barplot(x = "day", y = 'total_bill', data = tips,
 
 
     
-![png](output_63_0.png)
+![png](/images/python_visualiztion_basic_/output_63_0.png)
     
 
 
@@ -1065,7 +1159,7 @@ fig.show()
 
 
     
-![png](output_65_0.png)
+![png](/images/python_visualiztion_basic_/output_65_0.png)
     
 
 
@@ -1124,7 +1218,7 @@ fig.show()
 
 
     
-![png](output_66_0.png)
+![png](/images/python_visualiztion_basic_/output_66_0.png)
     
 
 
@@ -1206,6 +1300,6 @@ plt.show()
 
 
     
-![png](output_67_1.png)
+![png](/images/python_visualiztion_basic_/output_67_1.png)
     
 
