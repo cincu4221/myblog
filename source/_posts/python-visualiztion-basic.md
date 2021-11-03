@@ -74,4 +74,6 @@ plt.xlabel('Date')
 plt.ylabel('Stock Market Open Price') 
 plt.show()
 ```
+![](/images/python_visualiztion_basic.png)
+
 
