@@ -61,3 +61,10 @@ tags:
 |presort|데이터 정렬 필요 여부|
 
 괄호 내부에 아무것도 입력하지않으면 기본값으로 결정나무가 출력된다.
+
+
+# **References**
+
+
+* [https://inuplace.tistory.com/548](https://inuplace.tistory.com/548)
+* [https://scikit-learn.org/stable/modules/tree.html#classification](https://scikit-learn.org/stable/modules/tree.html#classification)
