@@ -1,6 +1,6 @@
 ---
 title: NumPy 기본 다지기
-date: 2021-11-02 18:43:06
+date: 2021-11-06 12:06:27
 tags:
 - Python
 - Numpy
