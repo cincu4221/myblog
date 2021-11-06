@@ -7,7 +7,7 @@ tags:
 ---
 
 ## Numpy란 무엇인가?
-![Numpy_Symbol](/images/git_install/Numpy_Symbol.png)  
+![Numpy_Symbol](/images/Numpy_Symbol.png)  
 `Numpy`는 상당부분 C언어로 작성된 파이썬 라이브러리이다. 기본적으로 `array`라는 자료를 생성하고 이를 바탕으로 색인, 처리, 연산 등을 하는 기능을 수행한다. 물론 C언어로 작성되었기 때문에 속도도 꽤나 빠른편이다.
 
 ## Numpy의 기본
