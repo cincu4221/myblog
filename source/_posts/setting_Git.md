@@ -33,7 +33,7 @@ tags:
 * 설치경로를 정해주고 `Next`
 
 ![](/images/git_install/git_install_4.png)   
-* 설치할 Component들을 선택하는 창이다. 기본으로 선택되어 있는것만 선택하고 `Next`를 눌러 넘어간다.
+* 설치할 Component 들을 선택하는 창이다. 기본으로 선택되어 있는것만 선택하고 `Next`를 눌러 넘어간다.
 
 ![](/images/git_install/git_install_5.png)   
 * 시작메뉴에 폴더를 생성하는 창이다. 폴더를 추가하고 싶지 않다면 아래에 있는 `Don't create a Start Menu folder` 체크박스를 클릭하고 `Next`를 눌러준다.
