@@ -7,7 +7,7 @@ tags:
 ---
 
 <details> 
-<summary>임포트</summary>
+<summary>임포트 및 데이터프레임 추가</summary>
 
 ```python
 # This Python 3 environment comes with many helpful analytics libraries installed
@@ -145,7 +145,8 @@ textonbar_man = [ # list comprehension = [(변수를 활용한 값) for (사용�
 textonbar_woman = [ # list comprehension
                     round((w/(m+w))*100, 1) for m, w in zip(man.values, woman.values)]
 
-fig = go.Figure(data=[ # 그래프의 형태를 정하는 함수
+# go = graph_objects
+fig = go.Figure(data=[ 
                         go.Bar( # 막대그래프
                                 name='Man', # 그래프로 나타낼 항목
                                 x=man.index, # x축에 man의 인덱스
@@ -160,11 +161,11 @@ fig = go.Figure(data=[ # 그래프의 형태를 정하는 함수
                                 marker_color=colors[3])
 ])
 fig.update_traces(
-                    texttemplate='%{text:.3s}%', # 수치가 그래프에서 어느정도 멀어지는지
-                    textposition='inside') # 값의 위치
+                    texttemplate='%{text:.3s}%', # fig(print(fig)로 출력가능)내부의 text 인자를 차례대로 출력 (그래프의 위의 텍스트를 표현)
+                    textposition='inside') # 그래프상에서 값의 위치
 fig.update_layout(
                     barmode='stack', # 막대의 형태
-                    title_text='Age distribution by gender', # 제목
+                    title_text='Age distribution by gender', # 그래프 제목
                     xaxis_title='Age', # x축 제목
                     yaxis_title='Counts') # y축 제목
 fig.show()
@@ -253,3 +254,23 @@ fig.show()
 </details>
 
 </details>
+
+### 몇몇 요소 확인법
+
+---
+
+`print(type(데이터))`  
+-> 데이터의 타입을 출력한다
+
+`데이터.head()`,`데이터.tail()`  
+-> 데이터를 인덱스 순으로 출력한다. **head**는 처음부터 끝까지, **tail**은 반대로 출력하며 괄호안에 숫자를 입력하면 숫자만큼 출력한다.  
+
+
+
+## References
+
+[go.Figure() properties](https://plotly.com/python-api-reference/generated/plotly.graph_objects.Figure.html#id0)  
+[update_traces() properties](https://plotly.com/python-api-reference/generated/plotly.graph_objects.Figure.html#plotly.graph_objects.Figure.update_traces)  
+[update_layout() properties](https://plotly.com/python-api-reference/generated/plotly.graph_objects.Figure.html#plotly.graph_objects.Figure.update_layout)  
+[show() properties](https://plotly.com/python-api-reference/generated/plotly.graph_objects.Figure.html#plotly.graph_objects.Figure.show)   
+[go.Bar() properties](https://plotly.com/python-api-reference/generated/plotly.graph_objects.Bar.html)  
