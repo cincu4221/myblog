@@ -2,7 +2,7 @@
 title: 캐글 데이터 시각화 해석-1
 date: 2021-11-08 14:50:50
 categories: 
-- Data visualization
+- Data Visualization
 tags:
 - Kaggle
 - Python
