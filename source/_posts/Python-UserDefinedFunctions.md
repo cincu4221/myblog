@@ -1,7 +1,9 @@
 ---
 title: 파이썬(Python) 사용자 지정 함수
 date: 2021-11-09 15:12:27
-tags:
+tags: 
+- Python
+- Function
 ---
 
 ## 사용자 지정 함수란?
