@@ -3,6 +3,7 @@ title: pandas 기본 문법
 date: 2021-11-02 16:14:46
 categories: 
 - pandas
+
 tags: 
 - Python
 - pandas

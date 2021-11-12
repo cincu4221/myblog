@@ -3,6 +3,7 @@ title: 파이썬(Python) 기본 문법 - 1
 date: 2021-11-01 12:24:46
 categories: 
 - Python
+
 tags: 
 - Python
 ---
