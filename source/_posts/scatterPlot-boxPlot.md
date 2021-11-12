@@ -9,7 +9,7 @@ tags:
 - Python
 ---
 
-## 산점도
+## 산점도(scatter plot)
 ### 산점도란?
 
 ---
@@ -99,9 +99,16 @@ pyo.iplot(data)
 
 </details>
 
+## 박스플롯 (box plot)
+
+### 박스플롯이란??
+
+
 
 ## References
 
 https://hogni.tistory.com/84  
 [마커 모양 변경](https://plotly.com/python/marker-style/)
+
+
 
