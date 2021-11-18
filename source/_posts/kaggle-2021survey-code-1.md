@@ -35,26 +35,57 @@ df21 = pd.read_csv('../input/kaggle-survey-2021/kaggle_survey_2021_responses.csv
 
 ---
 
+```python
+JP_age_19 = group(df19,'Japan','Q1').sort_index()
+JP_age_21 = group(df21,'Japan','Q1').sort_index()
+CN_age_19 = group(df19,'China','Q1').sort_index()
+CN_age_21 = group(df21,'China','Q1').sort_index()
+
+fig_age = make_subplots(rows=1, cols=2, specs=[[{'type':'xy'}, {'type':'xy'}]])
+
+fig_age.add_trace(go.Bar(name=coun_years[0], x=JP_age_19.index, y=JP_age_19.values, marker_color=coun_years_colors[2]),1,1)
+fig_age.add_trace(go.Bar(name=coun_years[1], x=CN_age_19.index, y=CN_age_19.values, marker_color=coun_years_colors[3]),1,1)
+fig_age.add_trace(go.Bar(name=coun_years[2], x=JP_age_21.index, y=JP_age_21.values, marker_color=coun_years_colors[0]),1,2)
+fig_age.add_trace(go.Bar(name=coun_years[3], x=CN_age_21.index, y=CN_age_21.values, marker_color=coun_years_colors[1]),1,2)
+
+fig_age.update_layout(barmode='group', title_text='2019 & 2021, Japan and China age distribution')
+
+fig_age.update_xaxes(title_text='2019 Age distribution', row=1, col=1)
+fig_age.update_yaxes(title_text='Counts', row=1, col=1)
+fig_age.update_xaxes(title_text='2021 Age distribution', row=1, col=2)
+fig_age.update_yaxes(title_text='Counts', row=1, col=2)
+
+fig_age.show()
+```
+
+![일본, 중국 캐글러의 나이분포](/images/kaggle_graph/Q1gragh.png)  
+
+일본과 중국의 캐글러 나이분포를 막대그래프로 나타낸 것이다.  
+각 그래프는 연도별로 나눈 일,중 캐글러의 나이 분포이고 그래프의 항목은 18세부터 70세 이상까지 3,4년씩을 한 항목으로 묶었다.
+
+
 ## Q2. What`s your gender?
 
 ---
 
 ```python
-fig = make_subplots(rows=2, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}],[{'type':'domain'}, {'type':'domain'}]])
+fig = make_subplots(rows=2, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}],
+                                           [{'type':'domain'}, {'type':'domain'}]])
 
 fig.add_trace(go_Pie('2019_Japan', JP_age_series.value_counts()),1,1)
-              
 fig.add_trace(go_Pie('2019_China', CN_age_series.value_counts()),1,2)
-
 fig.add_trace(go_Pie('2021_Japan', group(df21,'Japan','Q2')),2,1)
-
 fig.add_trace(go_Pie('2021_China', group(df21,'China','Q2')),2,2)
 
 fig.update_traces(marker=dict(colors=gen_colors[0:]))
 fig.update_layout(title_text='Gender Distribution',
-                  paper_bgcolor='ivory',
                   showlegend=True,
                   autosize=True,
                   height=700)
 fig.show()
 ```
+
+![일본, 중국 캐글러의 성별분포](/images/kaggle_graph/Q2gragh.png)  
+ 
+일본과 중국의 캐글러 성별분포를 도넛모양으로 나타낸 그래프이다.  
+각각의 그래프는 국가,년도(2019, 2021)별로 각각 나누었고 그래프의 항목은 `Man`,`Woman`,`Prefer not to say`,`Nonbinary`,`Prefer to self-describe` 다섯가지로 나누었다.
