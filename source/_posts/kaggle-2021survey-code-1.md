@@ -31,36 +31,64 @@ df21 = pd.read_csv('../input/kaggle-survey-2021/kaggle_survey_2021_responses.csv
 ```
 이처럼 후에 사용할 라이브러리를 임포트, 그래프에 사용할 색을 리스트로 만들어주고 df19에 19년도 데이터셋을, df21에 21년도 데이터셋을 넣어준다.
 
+
+## 사용자 지정 함수
+
+---
+```python
+def group(data, country, question_num):
+    return data[data['Q3'] == country][question_num].value_counts()
+
+def go_Pie(country, label_value):
+    return go.Pie(title = country,
+                  labels = label_value.index,
+                  values = label_value.values,
+                  textinfo = 'label+percent',
+                  rotation=315,
+                  hole = .3,)
+```
+
+앞으로 코드에서 사용될 함수이다.  
+[사용자 지정 함수란?](https://cincu4221.github.io/2021/11/10/Python-UserDefinedFunctions/)
+
 ## Q1. What`s your age?
 
 ---
 
 ```python
 JP_age_19 = group(df19,'Japan','Q1').sort_index()
+
 JP_age_21 = group(df21,'Japan','Q1').sort_index()
-CN_age_19 = group(df19,'China','Q1').sort_index()
-CN_age_21 = group(df21,'China','Q1').sort_index()
+
+CN_age_19 = group(df19,'China','Q1')
+CN_age_19.loc['55-59'] = 0
+CN_age_19.loc['60-69'] = 0
+CN_age_19 = CN_age_19.sort_index()
+
+CN_age_21 = group(df21,'China','Q1')
+CN_age_21.loc['60-69'] = 0
+CN_age_21 = CN_age_21.sort_index()
 
 fig_age = make_subplots(rows=1, cols=2, specs=[[{'type':'xy'}, {'type':'xy'}]])
 
-fig_age.add_trace(go.Bar(name=coun_years[0], x=JP_age_19.index, y=JP_age_19.values, marker_color=coun_years_colors[2]),1,1)
-fig_age.add_trace(go.Bar(name=coun_years[1], x=CN_age_19.index, y=CN_age_19.values, marker_color=coun_years_colors[3]),1,1)
-fig_age.add_trace(go.Bar(name=coun_years[2], x=JP_age_21.index, y=JP_age_21.values, marker_color=coun_years_colors[0]),1,2)
-fig_age.add_trace(go.Bar(name=coun_years[3], x=CN_age_21.index, y=CN_age_21.values, marker_color=coun_years_colors[1]),1,2)
+fig_age.add_trace(go.Bar(name=coun_years[0], x=JP_age_19.index, y=JP_age_19.values, marker_color='#FDB0C0'),1,1)
+fig_age.add_trace(go.Bar(name=coun_years[2], x=JP_age_21.index, y=JP_age_21.values, marker_color='#FD4659'),1,1)
+fig_age.add_trace(go.Bar(name=coun_years[1], x=CN_age_19.index, y=CN_age_19.values, marker_color='#FFDB81'),1,2)
+fig_age.add_trace(go.Bar(name=coun_years[3], x=CN_age_21.index, y=CN_age_21.values, marker_color='#FFAB0F'),1,2)
 
-fig_age.update_layout(barmode='group', title_text='2019 & 2021, Japan and China age distribution')
+fig_age.update_layout(barmode='group', title_text='2019 & 2021, Japan and China age distribution', showlegend=True)
 
-fig_age.update_xaxes(title_text='2019 Age distribution', row=1, col=1)
+fig_age.update_xaxes(title_text='Japan Age distribution', row=1, col=1)
 fig_age.update_yaxes(title_text='Counts', row=1, col=1)
-fig_age.update_xaxes(title_text='2021 Age distribution', row=1, col=2)
+fig_age.update_xaxes(title_text='China Age distribution', row=1, col=2)
 fig_age.update_yaxes(title_text='Counts', row=1, col=2)
 
 fig_age.show()
 ```
 
 ![일본, 중국 캐글러의 나이분포](/images/kaggle_graph/Q1gragh.png)  
-
-일본과 중국의 캐글러 나이분포를 막대그래프로 나타낸 것이다.  
+ 
+첫번째 주제인 What`s your age?에 대한 일본과 중국의 캐글러 나이분포를 막대그래프로 나타낸 것이다.  
 각 그래프는 연도별로 나눈 일,중 캐글러의 나이 분포이고 그래프의 항목은 18세부터 70세 이상까지 3,4년씩을 한 항목으로 묶었다.
 
 
@@ -87,7 +115,7 @@ fig.show()
 
 ![일본, 중국 캐글러의 성별분포](/images/kaggle_graph/Q2gragh.png)  
  
-일본과 중국의 캐글러 성별분포를 도넛모양으로 나타낸 그래프이다.  
+두번쨰 질문에 답하기 위해 일본과 중국의 캐글러 성별분포를 도넛모양으로 나타낸 그래프이다.  
 각각의 그래프는 국가,년도(2019, 2021)별로 각각 나누었고 그래프의 항목은 
 `Man` 
 `Woman` 
@@ -95,3 +123,12 @@ fig.show()
 `Nonbinary` 
 `Prefer to self-describe`  
 이렇게 다섯가지로 나누었다.
+
+
+## References
+
+[plotly bar chart tutorial](https://plotly.com/python/bar-charts/)  
+[plotly bar chart properties (bar traces)](https://plotly.com/python/reference/bar/)  
+[plotly pie chart tutorial](https://plotly.com/python/pie-charts/)  
+[plotly pie chart properties (pie traces)](https://plotly.com/python/reference/pie/)
+
