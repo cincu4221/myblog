@@ -88,4 +88,10 @@ fig.show()
 ![일본, 중국 캐글러의 성별분포](/images/kaggle_graph/Q2gragh.png)  
  
 일본과 중국의 캐글러 성별분포를 도넛모양으로 나타낸 그래프이다.  
-각각의 그래프는 국가,년도(2019, 2021)별로 각각 나누었고 그래프의 항목은 `Man`,`Woman`,`Prefer not to say`,`Nonbinary`,`Prefer to self-describe` 다섯가지로 나누었다.
+각각의 그래프는 국가,년도(2019, 2021)별로 각각 나누었고 그래프의 항목은 
+`Man` 
+`Woman` 
+`Prefer not to say` 
+`Nonbinary` 
+`Prefer to self-describe`  
+이렇게 다섯가지로 나누었다.
