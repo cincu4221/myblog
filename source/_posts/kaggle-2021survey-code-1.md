@@ -1,5 +1,5 @@
 ---
-title: 2021 캐글 대회 코드 작성기 
+title: 2021 캐글 대회 코드 작성기 - 1
 date: 2021-11-17 15:07:03
 tags: 
 - Kaggle
@@ -97,6 +97,33 @@ fig_age.show()
 ---
 
 ```python
+JP_ndarray = df19[df19['Q3'] == 'Japan']['Q2'].values
+CN_ndarray = df19[df19['Q3'] == 'China']['Q2'].values
+JP_age_list = []
+CN_age_list = []
+
+for item in JP_ndarray:
+    if item == 'Male':
+        item_mod = item.replace('Male','Man')
+        JP_age_list.append(item_mod)
+    elif item == 'Female':
+        item_mod2 = item.replace('Female','Woman')
+        JP_age_list.append(item_mod2)
+    else :
+        JP_age_list.append(item)
+    
+for item in CN_ndarray:
+    if item == 'Male':
+        item_mod = item.replace('Male','Man')
+        CN_age_list.append(item_mod)
+    elif item == 'Female':
+        item_mod2 = item.replace('Female','Woman')
+    else :
+        CN_age_list.append(item)
+
+JP_age_series = pd.Series(JP_age_list)
+CN_age_series = pd.Series(CN_age_list)
+
 fig = make_subplots(rows=2, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}],
                                            [{'type':'domain'}, {'type':'domain'}]])
 
