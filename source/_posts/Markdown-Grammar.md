@@ -109,7 +109,7 @@ www.naver.com
 <span style="color:green">초록색 글씨</span>  
 <span style="color:pink">분홍색 글씨</span> 
 
-<span style="color:#00FFFF">헥스코드 적용 글씨</span>
+<span style="color:#00FFFF">헥스코드 적용 글씨 </span>
 
 검색하기 애매한 색도 [여기](https://www.color-hex.com/) 에서 찾을 수 있다.
 
