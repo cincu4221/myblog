@@ -1,6 +1,8 @@
 ---
 title: 2021 캐글 대회 코드 작성기 - 1
 date: 2021-11-17 15:07:03
+categories: 
+- Data Visualization
 tags: 
 - Kaggle
 - Python

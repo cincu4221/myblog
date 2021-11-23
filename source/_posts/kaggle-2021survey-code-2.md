@@ -1,6 +1,8 @@
 ---
 title: 2021 캐글 대회 코드 작성기 - 2
 date: 2021-11-19 16:01:16
+categories: 
+- Data Visualization
 tags:
 - Kaggle
 - Python
@@ -94,4 +96,5 @@ fig_T.show()
 ![연도별 일본과 중국의 시각화 라이브러리 & 툴 사용 그래프](/images/kaggle_graph/Q4gragh.png)  
 
 각 그래프를 연도로 나누고 그래프에는 그에 해당하는 라이브러리,툴 사용그래프를 국가별로 나누어 넣은 막대그래프이다.  
+
 
