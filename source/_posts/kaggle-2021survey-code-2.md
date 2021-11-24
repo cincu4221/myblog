@@ -95,6 +95,34 @@ fig_T.show()
 
 ![연도별 일본과 중국의 시각화 라이브러리 & 툴 사용 그래프](/images/kaggle_graph/Q4gragh.png)  
 
-각 그래프를 연도로 나누고 그래프에는 그에 해당하는 라이브러리,툴 사용그래프를 국가별로 나누어 넣은 막대그래프이다.  
+각 그래프를 연도로 나누고 그래프에는 그에 해당하는 라이브러리,툴 사용량을 국가별로 나누어 넣은 막대그래프이다.  
+양국 모두 전반적으로 증가하였으나 눈에띄는 부분은 중국의 `None`항목이 크게 늘었고, 중국은 모든 항목의 사용량이 증가한 반면에 일본은 감소세가 보이는 항목이 있었다.  
 
 
+
+## Q16. Which of the following machine learning frameworks do you use on a regular basis?
+
+---
+```python
+fig_F = make_subplots(rows=1, cols=2, specs=[[{'type':'xy'}, {'type':'xy'}]])
+ 
+fig_F.add_trace(go.Bar(name=coun_years[0], x=df19_JP_Q16['Q28'].values, y=df19_JP_Q16['counts'].sort_values(ascending=False).values, marker_color=coun_years_colors[0]),1,1)
+fig_F.add_trace(go.Bar(name=coun_years[1], x=df19_CN_Q16['Q28'].values, y=df19_CN_Q16['counts'].sort_values(ascending=False).values, marker_color=coun_years_colors[1]),1,1)
+fig_F.add_trace(go.Bar(name=coun_years[2], x=df21_JP_Q16['Q16'].values, y=df21_JP_Q16['counts'].sort_values(ascending=False).values, marker_color=coun_years_colors[2]),1,2)
+fig_F.add_trace(go.Bar(name=coun_years[3], x=df21_CN_Q16['Q16'].values, y=df21_CN_Q16['counts'].sort_values(ascending=False).values, marker_color=coun_years_colors[3]),1,2)
+ 
+fig_F.update_layout(title_text='2019 & 2021, Machine Learning Frameworks in Use',
+                    showlegend=True,
+                    autosize=True)
+
+fig_F.update_xaxes(title_text='2019 Machine Learning Frameworks', row=1, col=1)
+fig_F.update_yaxes(title_text='Counts', row=1, col=1)
+fig_F.update_xaxes(title_text='2021 Machine Learning Frameworks', row=1, col=2)
+fig_F.update_yaxes(title_text='Counts', row=1, col=2)
+
+fig_F.show()
+```
+
+![연도별 일본과 중국의 시각화 라이브러리 & 툴 사용 그래프](/images/kaggle_graph/Q5gragh.png)
+
+이번 질문에대한 답도 비슷하다. 그래프는 연도로 나누고 각각의 x축에는 사용하는 머신러닝 프레임워크, y축에는 그 수가 표기되어 얼마나 많은 캐글러가 머신러닝 프레임워크를 사용하지는 나타낸다.  
