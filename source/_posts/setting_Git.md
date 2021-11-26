@@ -2,7 +2,7 @@
 title: 윈도우에서 Git 설치하기
 date: 2021-10-29 21:44:46
 categories: 
-- Git
+- Github
 tags: 
 - Git
 - Install
