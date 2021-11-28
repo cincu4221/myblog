@@ -71,4 +71,6 @@ $ git push origin HEAD:master
 커밋한 파일들을 깃허브로 올려주는 명령어이다.
 첫째 줄 명령어로 푸시가 안된다면 아래 명령어를 입력해보자
 
-![로컬 저장소와 리포지토리가 잘 연결되어 커밋된 모습](/images/Link_github_repository/capture-4.png)   
+![로컬 저장소와 리포지토리가 잘 연결되어 커밋된 모습](/images/Link_github_repository/capture-4.png)  
+
+성공적으로 연결되어 커밋, 푸시까지 된 모습이다.
