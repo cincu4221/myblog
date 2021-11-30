@@ -46,17 +46,17 @@ df21[0:5][Q1,Q14] # Q1,Q14 항목의 값 0부터 4까지 출력
 ```python
 df21[df21['Q3'] == "South Korea"] # Q3 항목의 값이 "South Korea"인 행의 데이터프레임 출력
 ```
-![조건을 지정해 데이터를 출력해냄](C:\Users\wjjeon\Desktop\github\myblog\source\images\plotly_Bar_Chart_basic\table-1.png)
+![조건을 지정해 데이터를 출력해냄](/images/plotly_Bar_Chart_basic/table-1.png)
 위 코드처럼 어느 조건에 해당하는행을 출력 할 수도 있다.
 
 ```python
 KR_Age = df21[df21['Q3'] == 'South Korea']['Q1'].value_counts()
 JP_Age = df21[df21['Q3'] == 'Japan']['Q1'].value_counts()
 ```
-위 코드는 Q3(국가)이 South Korea인 행과 Japan인 행의 Q1(연령)값을 뽑아내는 코드이다.
+위 코드는 Q3(국가)이 South Korea인 행과 Japan인 행의 Q1(연령)값을 뽑아내는 코드로 이를 통해 그래프를 만들어 볼 것이다.
 
 
-## 한번에 여러 차트 틀 만들기
+## 다중 차트 틀 만들기
 
 위에서 import한 `make_subplots`으로 차트여러개를 출력 할 수 있다.
 ```python
@@ -80,7 +80,7 @@ fig.update_yaxes(title_text='Counts', row=1, col=2)
 
 fig.show()
 ```
-![파라미터값을 바꾸어 그래프를 출력](C:\Users\wjjeon\Desktop\github\myblog\source\images\plotly_Bar_Chart_basic\Graph-1.png)
+![파라미터값을 바꾸어 그래프를 출력](/images/plotly_Bar_Chart_basic/Graph-1.png)
 add_trace, update_layout 등의 파라미터(속성)값으로 그래프를 꾸미는 코드이다.  
 ---
 
