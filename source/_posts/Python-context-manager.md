@@ -98,3 +98,7 @@ with File('demo.txt', 'wb') as opened_file:
 7. __exit__문을 통해 파일 닫음
 
 위와같은 실행순서로 context manager를 구현 할 수 있다.
+
+## References.
+https://tempdev.tistory.com/22  
+https://ddanggle.gitbooks.io/interpy-kr/content/ch24-context-manager.html
