@@ -36,7 +36,7 @@ coun_years_colors = ['#D90B0B','#FFCE3F','#FF6161','#FFDB81']
 df19 = pd.read_csv('../input/kaggle-survey-2019/multiple_choice_responses.csv')
 df21 = pd.read_csv('../input/kaggle-survey-2021/kaggle_survey_2021_responses.csv')
 ```
-이처럼 후에 사용할 라이브러리를 임포트, 그래프에 사용할 색을 리스트로 만들어주고 df19에 19년도 데이터셋을, df21에 21년도 데이터셋을 넣어준다.
+이처럼 후에 사용할 라이브러리를 임포트, 그래프에 사용할 색을 리스트로 만들어주고 df19에 19년의 데이터셋을, df21에 21년의 데이터셋을 넣어준다.
 
 
 ## 사용자 지정 함수
