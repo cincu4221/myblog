@@ -136,3 +136,6 @@ def func1():
 마지막으로 데코레이터를 그림으로 표현하면 다음과 같다.
 
 ![데코레이터의 실행 과정](/images/Python_Decorator/python_decorator.png)
+
+## Reference
+https://bluese05.tistory.com/30
