@@ -1,5 +1,5 @@
 ---
-title: [Git] git branch 기초 (추가,이동,삭제 등)  
+title: git branch 기초 (추가,이동,삭제 등)  
 date: 2021-12-10 17:12:33  
 categories: 
 - git  
