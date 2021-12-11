@@ -9,6 +9,7 @@ tags:
 - github
 - branch
 - version
+- checkout
 ---
 
 heroku를 통해서 대시보드 배포를 하려고 애를 쓰던중에 끝도없는 에러와 마주쳐서 github Repo를 지웠다 만들었다 하기를 열번가량 반복하다가 현타가 왔다.  
