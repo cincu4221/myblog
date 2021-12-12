@@ -42,11 +42,11 @@ git branch
 ![branch 확인](/images/git-branch/git-branch-1.png)
 
 branch에 대해 처음 알았고 아무 조작도 가하지 않았다면 아마도 master(또는 main) branch만 있을 것이다.  
-그리고 현재 적용(?)된 branch가 색이 다르며 앞에 별표(*)가 있다.
+그리고 현재 적용(?)된 branch 가 색이 다르며 앞에 별표(*)가 있다.
 
 ## branch 추가
 
-이제 새롭게 branch를 만들어보자 만약 자신이 원하는 branch의 이름이 bugfix라면 터미널에 다음처럼 작성하면 된다.  
+이제 새롭게 branch 를 만들어보자 만약 자신이 원하는 branch 의 이름이 bugfix 라면 터미널에 다음처럼 작성하면 된다.  
 ```python
 # git branch "branchName"
 git branch bugfix
