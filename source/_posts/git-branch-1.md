@@ -80,5 +80,7 @@ git branch -d bugfix
 
 ![branch 이동 및 삭제 후 확인](/images/git-branch/git-branch-4.png)
 
-현재 활성화된 branch를 삭제하려는 경우에는 삭제되지않으니 `checkout`으로 다른 branch로 이동한 다음 삭제를 시켜줘야 한다.  
+현재 활성화된 branch를 삭제하려는 경우에는 삭제되지않으니 `checkout`으로 다른 branch로 이동한 다음 삭제를 시켜줘야 한다.
+
+이렇게 branch 의 기본적인 명령어들을 알아보았는데 클론을 만들고 클론이 잘못될 경우 다시 되돌릴수 있다는 것 자체가 매우 필요한 기능이라 자주 사용하게 될듯 하다.  
 
