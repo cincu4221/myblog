@@ -155,4 +155,58 @@ open API를 통해 데이터를 가져오는 법도 간단히 알아보자.
 이후 [실시간 영업소간 통행시간 페이지](http://data.ex.co.kr/openapi/basicinfo/openApiInfoM?apiId=0147&serviceType=&keyWord=&searchDayFrom=2014.12.01&searchDayTo=2022.01.03&CATEGORY=TR&GROUP_TR=TIME_TCS) 에 접속해 아래의 예제 실행하기를 클릭.  
 
 ![실시간 영업소간 통행시간 팝업](/images/crawling_basic/img-2.png)  
-원하는 Request Parameter를 입력하고(필자는 key(여기서 키는 방금 발급받은 인증키), type, iStartUnitCode, iEndUnitCode만 작성) URL보기를 하면 URL이 출력되고 , 아래의 예제 실행하기를 통해 직접 볼 수도 있다.  
+원하는 Request Parameter를 입력하고(필자는 key(여기서 키는 방금 발급받은 인증키), type, iStartUnitCode, iEndUnitCode만 작성) URL보기를 하면 URL이 출력되고 , 아래의 예제 실행하기를 통해 직접 볼 수도 있다.
+
+이제, 캐글에 다음과 같이 입력해준다.
+```python
+import requests
+key = "발급받은 인증키"
+type = "json"
+url = "출력된 URL"
+responses = requests.get(url)
+print(responses)
+json = responses.json()
+json
+```
+을 입력해주면
+팝업에서 보았던 예제를 직접 볼 수 있다.
+
+필요한 정보가 있는 "realUnitTrtmVO" 항목을 가져오기 위해 다음 코드 입력
+```
+cars = json["realUnitTrtmVO"]
+```
+이것을 반복문을 통해 리스트, 딕셔너리 형태로 만들어준다.
+```
+data = []
+for car in cars:
+  dic_df = {}
+  dic_df["date"] = car["stdDate"]
+  dic_df["time"] = car["stdTime"]
+  dic_df["destination"] = car["endUnitNm"]
+
+  data.append(dic_df)
+
+data
+```
+아래는 아웃풋
+```
+[{'date': '20220103', 'destination': '수원신갈', 'time': '05:30'},
+ {'date': '20220103', 'destination': '수원신갈', 'time': '05:35'},
+ {'date': '20220103', 'destination': '수원신갈', 'time': '05:40'},
+ {'date': '20220103', 'destination': '수원신갈', 'time': '05:45'},
+ {'date': '20220103', 'destination': '수원신갈', 'time': '05:50'},
+ {'date': '20220103', 'destination': '수원신갈', 'time': '05:55'},
+ {'date': '20220103', 'destination': '수원신갈', 'time': '06  '},
+ {'date': '20220103', 'destination': '수원신갈', 'time': '06:00'},
+ {'date': '20220103', 'destination': '수원신갈', 'time': '06:05'},
+ {'date': '20220103', 'destination': '수원신갈', 'time': '06:10'}]
+```
+이렇게 딕셔너리로 구성된 리스트가 생성되었다. 
+이것을 Pandas Dataframe으로 변환후 엑셀시트로 출력하려면 다음과 같이 하면 된다.
+```
+import pandas as pd
+df = pd.DataFrame(data) # 판다스 데이터프레임으로 변환
+df.to_csv("temp.csv",index=False,encoding="euc-kr")
+```
+
+이렇게하면 캐글에서 설정된곳에 데이터프레임이 다운로드된다.
