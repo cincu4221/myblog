@@ -63,7 +63,7 @@ pip install beautifulsoup4
 ```python
 from bs4 import Beautifulsoup
 ```
-이후 라이브러리를 import하고 간단한 함수를 만들어 크롤링을 해보자.
+이후 `Beautifulsoup` 라이브러리를 import하고 간단한 함수를 만들어 크롤링을 해보자.
 <br><br><br>
 
 ### HTML 불러오기
