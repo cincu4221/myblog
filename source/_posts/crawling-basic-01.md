@@ -209,4 +209,4 @@ df = pd.DataFrame(data) # 판다스 데이터프레임으로 변환
 df.to_csv("temp.csv",index=False,encoding="euc-kr")
 ```
 
-이렇게하면 캐글에서 설정된곳에 데이터프레임이 다운로드된다.
+이렇게하면 설정된 곳으로 캐글에서 데이터프레임이 다운로드된다.
