@@ -58,7 +58,7 @@ pip install beautifulsoup4
 
 ### BeautifulSoup를 사용하여 크롤링
 
-먼저 크롤링을 하기 위해 파이썬 파일을 하나 만들어준다.
+먼저 크롤링을 하기 위해 파이썬 파일을 만들어준다.
 
 ```python
 from bs4 import Beautifulsoup
