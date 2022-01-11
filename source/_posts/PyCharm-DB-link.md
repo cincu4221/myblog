@@ -3,7 +3,6 @@ title: PyCharm, PostgresSQL 연동
 date: 2022-01-11 13:14:23  
 categories:   
 - DB
-- Link
 
 tags:
 - PyCharm
