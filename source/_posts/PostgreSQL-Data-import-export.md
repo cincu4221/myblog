@@ -26,7 +26,7 @@ DB를 사용하다보면 데이터를 불러와야할 일도, csv파일 등으�
 
 좌상단의 File > Preferences > Paths > Binary paths 에서
 
-※  **EDB Advanced Server Binary Path**가 아닌 **PostgreSQL Binary Path** 에 자신의 `이하경로/PostgreSQL/버전/bin 을 입력해준다`
+※  **EDB Advanced Server Binary Path**가 아닌 **PostgreSQL Binary Path** 에 위 사진처럼 자신의 `이하경로/PostgreSQL/버전/bin` 을 입력해준다
 
 잘 입력했다면 Set as default를 누르고 Save.
 
