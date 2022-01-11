@@ -1,5 +1,5 @@
 ---
-title: 자바스크립트(Javascript) 쌩기초  
+title: 자바스크립트(Javascript) 쌩기초 기록-1  
 date: 2022-01-10 20:14:32  
 categories:   
 - Javascript  
