@@ -2,6 +2,7 @@
 Thumbs.db
 db.json
 *.log
+sqlquery-basic-1.md
 node_modules/
 public/
 .deploy*/
