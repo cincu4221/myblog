@@ -10,6 +10,7 @@ tags:
 - Database
 - PostgresSQL
 - Link
+- Setting
 ---
 
 

@@ -8,6 +8,7 @@ tags:
 - Github
 - Hexo
 - Markdown
+- Setting
 ---
 
 
