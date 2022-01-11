@@ -20,7 +20,7 @@ tags:
 
 포스팅의 대략적인 길이를 보면 알겠지만 매우 간단하다.
 
-## sub title1
+
 ![](/images/PyCharm-DB-Link/Untitled.png)
 
 먼저 본인이 연결하고싶은 위치에 파이참을 실행시켜준다.
