@@ -106,3 +106,6 @@ psql -U postgres -d postgres -f cities.sql -o cities.csv -F ',' -A -t
 그래도 `psql --help`를 입력하면 모든 명령어가 출력되니 참고하며 쓰면 된다.
 
 위의 명령어를 입력하면 DB의 암호 입력창이 나오는데 DB를 만들때 입력했던 암호를 입력하면 csv생성이 완료된다.
+
+## dump파일 업로드
+psql -U postgres -d postgres -f function_example.dump
