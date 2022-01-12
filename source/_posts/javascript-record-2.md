@@ -1,5 +1,5 @@
 ---
-title: 자바스크립트(Javascript) 쌩기초 기록-2  
+title: 자바스크립트(Javascript) 기록-2  
 date: 2022-01-11 19:11:56 
 categories:   
 - Javascript  
