@@ -1,4 +1,14 @@
-# SQL 수업 리뷰 3일차
+---
+title: SQL리뷰 수업 간단정리-3
+date: 2022-01-13 16:18:20  
+categories:   
+- SQL 
+
+tags:
+- SQL
+- query
+- stub
+---
 
 ## 3일차 코드
 
