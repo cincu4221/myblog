@@ -223,7 +223,7 @@ widgets:
         position: left
         type: profile
         # Author name
-        author: WJ
+        author: WJ's Devlog
         # Author title
         author_title: 수업 일기장
         # Author's current location
