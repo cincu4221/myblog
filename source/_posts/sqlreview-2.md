@@ -1,5 +1,5 @@
 ---
-title: SQL리뷰 수업 간단정리-2
+title: SQL리뷰 수업 간단정리-2  
 date: 2022-01-12 14:57:31  
 categories:   
 - SQL 
