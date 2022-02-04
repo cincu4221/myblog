@@ -6,6 +6,8 @@ categories:
 
 tags:
 - JAVA
+- Overloading
+- Overriding
 ---
 
 자바를 공부하다가 오버로딩(Overloading)과 오버라이딩(Overriding)이란 용어가 나와 헷갈릴수 있겠다 싶어 차이점을 찾아보고 포스팅 하려 한다.
