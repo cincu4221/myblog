@@ -20,7 +20,7 @@ Map자료형에 대해 포스팅하던중 `keySet()` 메소드의 리턴값이 S
 
 ---
 
-집합 자료형은 아래 코드처럼 HashSet을 사용하여 만들 수 있다. 
+집합 자료형은 아래 코드처럼 `HashSet`을 사용하여 만들 수 있다.
 
 ```java
 import java.util.Arrays;
