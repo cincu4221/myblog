@@ -103,15 +103,15 @@ GenericClass 클래스는 두 개의 객체 stringExam과 intergerExam 이 있�
 
 정말 그런지 확인을 해 보면
 
-![Untitled](/images/Java-generic/Untitled.png)
+![](/images/Java-generic/Untitled.png)
 
 stringExam.method1의 매개변수로 문자열을 주었을때는 컴파일에러가 발생하지 않다가
 
-![Untitled](/images/Java-generic/Untitled%201.png)
+![](/images/Java-generic/Untitled%201.png)
 
 문자열만 들어가야하는 List에 정수를 매개변수로 주니 컴파일 에러가 발생한다.
 
-![Untitled](/images/Java-generic/Untitled%202.png)
+![](/images/Java-generic/Untitled%202.png)
 
 반대의 경우도 마찬가지.
 
@@ -150,7 +150,7 @@ Integer와 같은 형태를 **래퍼클래스**(wrapper class) 라고 한다.
 
 래퍼클래스는 **기본형 데이터 타입을 참조형 데이터 타입으로 바꿔주는 클래스**다.
 
-![Untitled](/images/Java-generic/Untitled%203.png)
+![기본형 데이터 타입의 래퍼클래스](/images/Java-generic/Untitled%203.png)
 
 위 코드에서는 기본형인 int 가 아닌 래퍼클래스인 Integer를 사용함으로써 설정이 가능했던 것이다.
 
