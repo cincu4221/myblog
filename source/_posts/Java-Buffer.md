@@ -1,4 +1,16 @@
-# (JAVA) BufferedReader와 BufferedWriter를 통한 입출력
+---
+title: (JAVA) BufferedReader와 BufferedWriter를 통한 입출력
+date: 2022-02-19 10:15:32  
+
+categories:
+- Java
+
+tags:  
+- Java
+- Buffer
+- BufferedReader
+- BufferedWriter
+---
 
 백준의 자바 알고리즘 문제를 풀어보던 중 버퍼를 활용한 입출력을 사용해야 하나는 문제가 있었다.
 
@@ -78,9 +90,7 @@ BufferedWriter의 경우 버퍼를 잡아 놓았기 때문에 반드시 flush() 
 
 백준에 있는 문제를 풀어보자.
 
-![Untitled]((JAVA)%20Buf%20f486a/Untitled.png)
-
-[백준 문제번호 15552번 (빠른 A+B)]
+![백준 문제번호 15552번 (빠른 A+B)](/images/Java-Buffer/Untitled.png)
 
 ```java
 public static void main(String[] args) throws IOException {
@@ -118,4 +128,4 @@ public static void main(String[] args) throws IOException {
 
 ## Reference.
 
-****[[Java] BufferedReader, BufferedWriter를 활용한 빠른 입출력](https://coding-factory.tistory.com/251) - 코딩팩토리**
+**[[Java] BufferedReader, BufferedWriter를 활용한 빠른 입출력](https://coding-factory.tistory.com/251) - 코딩팩토리**
