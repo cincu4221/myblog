@@ -185,3 +185,7 @@ public double func(ItemData data) {
 이 코드에서 할인율을 20%로 증가시키는 것은 그냥 getDiscount() 메소드만 수정해주면 된다.
 
 이처럼 캡슐화를 하니 공통된 요구사항이 변경되었을때 중복된 여러코드를 수정하는 대신 캡슐화된 클래스 하나만 변경하면 문제가 해결되었다.
+
+
+## Reference.
+[캡슐화란 무엇인가? 어떤 이점이 있는가?](https://bperhaps.tistory.com/entry/%EC%BA%A1%EC%8A%90%ED%99%94%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-%EC%96%B4%EB%96%A4-%EC%9D%B4%EC%A0%90%EC%9D%B4-%EC%9E%88%EB%8A%94%EA%B0%80) - bperhaps
